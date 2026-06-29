@@ -1,0 +1,6 @@
+let numberA = Math.PI;
+let numberRadius = 5;
+let numberS = Math.PI * numberRadius * numberRadius;
+console.log("Площа кола: " + numberS);
+
+console.log(numberS.toFixed(2));
