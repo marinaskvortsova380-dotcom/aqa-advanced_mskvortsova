@@ -1,10 +1,5 @@
-let agePerson = 25;
+let agePerson = 17;
 console.log(agePerson);
 
-if (agePerson <= 18)
-    console.log("Ти неповнолітній");
-
-else
-    console.log("Ти повнолітній");
-
-console.log(agePerson >= 18 ? "true" : "false");
+let povnoriccha = agePerson >= 18;
+console.log(povnoriccha);
