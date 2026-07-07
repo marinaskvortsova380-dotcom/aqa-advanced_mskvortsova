@@ -1,19 +1,19 @@
-function getRectangleArea(widthOfRectangle, heightOfRectangle) {
-    const result = widthOfRectangle * heightOfRectangle;
-    return result;
-}
-const result = getRectangleArea(5, 10);
-console.log("Площа прямокутника: " + result);
 
-// Function declaration
-function getRectangleArea(widthOfRectangle, heightOfRectangle) {
-    return widthOfRectangle * heightOfRectangle;
+//Function declaration
+
+function getRectangleAreaDeclaration(width, height) {
+    return width * height;
 }
 
-// Function expression
-const getRectangleArea = function (widthOfRectangle, heightOfRectangle) {
-    return widthOfRectangle * heightOfRectangle;
+//Function expression
+
+const getRectangleAreaExpression = function (width, height) {
+    return width * height;
 }
 
-// Arrow function
-const getRectangleArea = (widthOfRectangle, heightOfRectangle) => widthOfRectangle * heightOfRectangle;
+//Arrow function
+const getRectangleAreaArrow = (width, height) => width * height;
+
+console.log("Площа прямокутника (declaration): " + getRectangleAreaDeclaration(5, 10));
+console.log("Площа прямокутника (expression): " + getRectangleAreaExpression(5, 10));
+console.log("Площа прямокутника (arrow): " + getRectangleAreaArrow(5, 10));
