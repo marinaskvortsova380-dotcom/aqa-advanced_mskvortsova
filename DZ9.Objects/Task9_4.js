@@ -4,7 +4,9 @@ const person = {
     age: 25,
 };
 
-const personEmail = "larusik@gmail.com";
+person.email = "larusik@gmail.com";
 console.log(person);
 
 delete person.age;
+
+console.log(person);
