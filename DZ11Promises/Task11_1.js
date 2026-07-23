@@ -1,4 +1,6 @@
-function saySmth(phrase, name) {
-    console.log('${phrase}', '${name}');
+function printWithDelay(text, delay) {
+    setTimeout(() => {
+        console.log(text);
+    }, delay);
 }
-const timerId = setTimeout(saySmth, 1000, " Привіт ", "Marina");
+printWithDelay("Привіт,Marina", 1000);

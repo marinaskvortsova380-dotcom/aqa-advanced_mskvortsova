@@ -12,20 +12,16 @@ async function fetchUser() {
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
-    return response.json();
+    return await response.json();
 }
 
-(async () => {
-    try {
-        const allPromisesResult = await Promise.all([fetchTodo(), fetchUser()]);
-        const [todo, user] = allPromisesResult;
-        console.log('--- Promise.all (async/await) ---');
-        console.log('Todo object:', todo);
-        console.log('User object:', user);
-        const racePromiseResult = await Promise.race([fetchTodo(), fetchUser()]);
-        console.log('\n--- Promise.race (async/await) ---');
-        console.log('Winner object:', racePromiseResult);
-    } catch (error) {
-        console.error('Error:', error);
-    }
-})();
+const allPromisesResult = await Promise.all([fetchTodo(), fetchUser()]);
+const [todo, user] = allPromisesResult;
+console.log('--- Promise.all (async/await) ---');
+console.log('Todo object:', todo);
+console.log('User object:', user);
+const racePromiseResult = await Promise.race([fetchTodo(), fetchUser()]);
+console.log('\n--- Promise.race (async/await) ---');
+console.log('Winner object:', racePromiseResult);
+
+
