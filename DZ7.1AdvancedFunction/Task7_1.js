@@ -5,11 +5,11 @@ function handleNumber(num, evenCallback, oddCallback) {
     oddCallback(num);
   }
 }
-function handleEven(num) {
-  console.log(`number ${num} is even`);
+function handleEven() {
+  console.log("number is even");
 }
-function handleOdd(num) {
-  console.log(`number ${num} is odd`);
+function handleOdd() {
+  console.log("number is odd");
 }
 
 handleNumber(100, handleEven, handleOdd);
