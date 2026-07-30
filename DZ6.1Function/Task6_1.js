@@ -13,10 +13,6 @@ const getRectangleAreaExpression = function (width, height) {
 //Arrow function
 const getRectangleAreaArrow = (width, height) => width * height;
 
-console.log(
-  "Площа прямокутника (declaration): " + getRectangleAreaDeclaration(5, 10),
-);
-console.log(
-  "Площа прямокутника (expression): " + getRectangleAreaExpression(5, 10),
-);
+console.log("Площа прямокутника (declaration): " + getRectangleAreaDeclaration(5, 10));
+console.log("Площа прямокутника (expression): " + getRectangleAreaExpression(5, 10));
 console.log("Площа прямокутника (arrow): " + getRectangleAreaArrow(5, 10));

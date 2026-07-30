@@ -30,17 +30,13 @@ export class Book {
   set year(value) {
     const currentYear = new Date().getFullYear();
     if (!Number.isInteger(value) || value < 0 || value > currentYear) {
-      throw new Error(
-        `Year must be a valid positive integer not greater than ${currentYear}.`,
-      );
+      throw new Error(`Year must be a valid positive integer not greater than ${currentYear}.`);
     }
     this._year = value;
   }
 
   printInfo() {
-    console.log(
-      `Title: "${this.title}", Author: ${this.author}, Year: ${this.year}`,
-    );
+    console.log(`Title: "${this.title}", Author: ${this.author}, Year: ${this.year}`);
   }
 
   static getOldestBook(books) {

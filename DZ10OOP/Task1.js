@@ -11,12 +11,7 @@ book2.printInfo();
 book3.printInfo();
 
 console.log("\n--- EBook Info ---");
-const ebook1 = new EBook(
-  "The housemaids secret",
-  "Freida McFadden",
-  2023,
-  "EPUB",
-);
+const ebook1 = new EBook("The housemaids secret", "Freida McFadden", 2023, "EPUB");
 ebook1.printInfo();
 
 console.log("\n--- Getters and Setters Demonstration ---");
