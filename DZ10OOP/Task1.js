@@ -1,5 +1,5 @@
-import { Book } from './Book.js';
-import { EBook } from './EBook.js';
+import { Book } from "./Book.js";
+import { EBook } from "./EBook.js";
 
 console.log("--- Books Info ---");
 const book1 = new Book("How Google Tests Software", "James Whittaker", 2012);
@@ -11,7 +11,12 @@ book2.printInfo();
 book3.printInfo();
 
 console.log("\n--- EBook Info ---");
-const ebook1 = new EBook("The housemaids secret", "Freida McFadden", 2023, "EPUB");
+const ebook1 = new EBook(
+  "The housemaids secret",
+  "Freida McFadden",
+  2023,
+  "EPUB",
+);
 ebook1.printInfo();
 
 console.log("\n--- Getters and Setters Demonstration ---");
@@ -25,7 +30,7 @@ console.log("\n--- Найдавніша книга ---");
 const booksArray = [book1, book2, book3, ebook1];
 const oldestBook = Book.getOldestBook(booksArray);
 if (oldestBook) {
-    oldestBook.printInfo();
+  oldestBook.printInfo();
 }
 
 console.log("\n--- Створення EBook з Book ---");

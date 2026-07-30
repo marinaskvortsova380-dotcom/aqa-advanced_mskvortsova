@@ -1,4 +1,4 @@
-let message = ("Hello, Hawaii");
+let message = "Hello, Hawaii";
 console.log(message);
 
 let a = 54;
@@ -10,6 +10,5 @@ console.log(age);
 let numberA = null;
 console.log(numberA);
 
-let numberB;
+let numberB = undefined;
 console.log(numberB);
-
