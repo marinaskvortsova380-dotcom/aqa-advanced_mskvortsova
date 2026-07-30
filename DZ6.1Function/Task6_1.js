@@ -1,15 +1,14 @@
-
 //Function declaration
 
 function getRectangleAreaDeclaration(width, height) {
-    return width * height;
+  return width * height;
 }
 
 //Function expression
 
 const getRectangleAreaExpression = function (width, height) {
-    return width * height;
-}
+  return width * height;
+};
 
 //Arrow function
 const getRectangleAreaArrow = (width, height) => width * height;

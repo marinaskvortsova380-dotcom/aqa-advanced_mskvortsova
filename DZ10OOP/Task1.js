@@ -1,5 +1,5 @@
-import { Book } from './Book.js';
-import { EBook } from './EBook.js';
+import { Book } from "./Book.js";
+import { EBook } from "./EBook.js";
 
 console.log("--- Books Info ---");
 const book1 = new Book("How Google Tests Software", "James Whittaker", 2012);
@@ -25,7 +25,7 @@ console.log("\n--- Найдавніша книга ---");
 const booksArray = [book1, book2, book3, ebook1];
 const oldestBook = Book.getOldestBook(booksArray);
 if (oldestBook) {
-    oldestBook.printInfo();
+  oldestBook.printInfo();
 }
 
 console.log("\n--- Створення EBook з Book ---");
