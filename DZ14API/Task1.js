@@ -2,7 +2,36 @@ import axios from "axios";
 import assert from "assert";
 const BASE_URL = "https://jsonplaceholder.typicode.com";
 
-async function runTests() { 
+// Налаштування інтерсептора для запитів (Request Interceptor)
+axios.interceptors.request.use(
+  (config) => {
+    console.log(`[OUTGOING REQUEST] ${config.method.toUpperCase()} ${config.url}`);
+    if (config.data) {
+      console.log("[REQUEST BODY]", config.data);
+    }
+    return config; // Обов'язково повертаємо конфіг запиту
+  },
+  (error) => {
+    console.error("[REQUEST ERROR]", error);
+    return Promise.reject(error);
+  }
+);
+
+// Налаштування інтерсептора для відповідей (Response Interceptor)
+axios.interceptors.response.use(
+  (response) => {
+    console.log(
+      `[INCOMING RESPONSE] ${response.status} ${response.config.method.toUpperCase()} ${response.config.url}`
+    );
+    return response; // Обов'язково повертаємо відповідь сервера
+  },
+  (error) => {
+    console.error("[RESPONSE ERROR]", error.message);
+    return Promise.reject(error);
+  }
+);
+
+async function runTests() {
   console.log("API Tests with Axios...");
 
   try {
@@ -19,7 +48,6 @@ async function runTests() {
     assert.strictEqual(getUserResponse.status, 200, "Status code should be 200");
     assert.strictEqual(getUserResponse.data.id, 1, "User ID should be 1");
     console.log("Test 2 Passed: User details match the API documentation");
-
 
     console.log("Test 3: GET /posts/1/comments");
     const getCommentsResponse = await axios.get(`${BASE_URL}/posts/1/comments`);
