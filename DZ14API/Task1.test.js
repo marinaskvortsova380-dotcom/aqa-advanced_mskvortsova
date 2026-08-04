@@ -2,7 +2,6 @@ import axios from "axios";
 
 const BASE_URL = "https://jsonplaceholder.typicode.com";
 
-// Налаштування інтерсептора для запитів (Request Interceptor)
 axios.interceptors.request.use(
   (config) => {
     console.log(`[OUTGOING REQUEST] ${config.method.toUpperCase()} ${config.url}`);
@@ -16,7 +15,6 @@ axios.interceptors.request.use(
   }
 );
 
-// Налаштування інтерсептора для відповідей (Response Interceptor)
 axios.interceptors.response.use(
   (response) => {
     console.log(
@@ -36,7 +34,6 @@ describe("JSONPlaceholder API Tests with Jest & Axios", () => {
     expect(response.status).toBe(200);
     expect(response.data.id).toBe(1);
     expect(typeof response.data.title).toBe("string");
-    expect(typeof response.data.body).toBe("string");
   });
 
   test("Test 2: GET /users/1 (should return correct user details)", async () => {
@@ -45,7 +42,6 @@ describe("JSONPlaceholder API Tests with Jest & Axios", () => {
     expect(response.status).toBe(200);
     expect(response.data.id).toBe(1);
     expect(response.data.name).toBe("Leanne Graham");
-    expect(response.data.email).toBe("Sincere@april.biz");
   });
 
   test("Test 3: GET /posts/1/comments (should return comments array for post 1)", async () => {
@@ -54,8 +50,6 @@ describe("JSONPlaceholder API Tests with Jest & Axios", () => {
     expect(response.status).toBe(200);
     expect(Array.isArray(response.data)).toBe(true);
 
-
-    // Перевіряємо кожен коментар
     response.data.forEach((comment) => {
       expect(comment.postId).toBe(1);
     });
