@@ -6,11 +6,12 @@ axios.interceptors.request.use(
   (config) => {
     console.log(`[OUTGOING REQUEST] ${config.method.toUpperCase()} ${config.url}`);
     if (config.data) {
-      console.log("[REQUEST BODY]", config.data);
+      console.log("[REQUEST BODY]", JSON.stringify(config.data, null, 2));
     }
     return config;
   },
   (error) => {
+    console.error(`[REQUEST ERROR]`, error);
     return Promise.reject(error);
   }
 );
@@ -23,6 +24,10 @@ axios.interceptors.response.use(
     return response;
   },
   (error) => {
+    console.error(`[RESPONSE ERROR]`, error.message);
+    if (error.response) {
+      console.error(`[RESPONSE STATUS] ${error.response.status}`);
+    }
     return Promise.reject(error);
   }
 );
