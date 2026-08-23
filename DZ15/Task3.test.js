@@ -1,6 +1,7 @@
 import axios from "axios";
 import { jest } from "@jest/globals";
 import { fetchData } from "./Task3_15.js";
+
 describe("Task 3: Mocking Axios in Jest", () => {
   let getSpy;
 
