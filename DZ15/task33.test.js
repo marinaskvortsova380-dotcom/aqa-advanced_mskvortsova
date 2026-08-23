@@ -1,8 +1,8 @@
 import axios from "axios";
-import { jest, test } from "@jest/globals";
+import { jest, test, describe, expect } from "@jest/globals";
 import { fetchData } from "./Task3_15.js";
 
-jest.mock('./Task3_15.js');
+jest.mock('axios');
 
 describe('Task 3: Mocking Axios in Jest', () => {
   test('should fetch data from the given URL (Success)', async () => {
