@@ -15,7 +15,7 @@ describe('Garage & Fuel Expenses with POM', () => {
   it('should add a car in garage', () => {
     const brand = 'Audi';
     const model = 'TT';
-    const mileage = '100';
+    const mileage = '1000';
 
     garagePage.addCar(brand, model, mileage);
 
@@ -26,20 +26,17 @@ describe('Garage & Fuel Expenses with POM', () => {
   it('should add fuel expense to the created car', () => {
     const brand = 'BMW';
     const model = '3';
-    const mileage = '200';
-    const expenseMileage = '250';
+    const mileage = '2000'; 
+    const expenseMileage = '2500';
     const liters = '30';
-    const totalCost = '60';
+    const totalCost = '6000';
 
-    // 1. Add car
+
     garagePage.addCar(brand, model, mileage);
     garagePage.carItems.first().should('contain', `${brand} ${model}`);
 
-    // 2. Add expense for the car
     garagePage.openAddExpenseModalForFirstCar();
-    expensesPage.addExpense(expenseMileage, liters, totalCost);
-
-    // 3. Verify in expenses page
+    expensesPage.addExpense(expenseMileage, liters, totalCost)
     expensesPage.open();
     cy.url().should('include', '/panel/expenses');
     expensesPage.expensesTableRows.first().should('be.visible');
